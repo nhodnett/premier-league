@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import TeamContainer from './components/TeamContainer';
 import './App.css';
 
 class App extends Component {
@@ -21,9 +22,12 @@ class App extends Component {
   
   render() {
     return (
-      <div className="App">
+      <main className="App">
+        <h1>My Old Man Said...</h1>
 
-      </div>
+        <TeamContainer />
+
+      </main>
     );
   }
 }
