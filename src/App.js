@@ -25,7 +25,7 @@ class App extends Component {
       <main className="App">
         <h1>My Old Man Said...</h1>
 
-        <TeamContainer />
+        <TeamContainer teams={this.state.teams}/>
 
       </main>
     );

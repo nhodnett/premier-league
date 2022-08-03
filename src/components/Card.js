@@ -1,11 +1,14 @@
 import React from 'react';
 import '../styles/Card.css';
 
-const Card = () => {
+const Card = ({ strTeamBadge }) => {
 
     return (
         <div className='card'>
-
+            <img 
+                src={strTeamBadge}
+                alt='teamBadge'
+            />
         </div>
     )
 }
