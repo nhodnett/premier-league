@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import TeamContainer from './components/TeamContainer';
+// import TeamDetails from './components/TeamDetails';
 import './App.css';
 
 class App extends Component {
   constructor() {
     super()
     this.state = {
-      teams: []
+      teams: [],
+      teamDetails: {}
     }
   }
 
@@ -19,13 +21,21 @@ class App extends Component {
       this.setState({ teams: data.teams })
     })
   }
+
+  // handleClick = (id) => {
+  //   console.log(id)
+  //   this.setState({ teamDetails: team.team })
+  // }
   
   render() {
+    console.log(this.state.teamDetails)
     return (
       <main className="App">
         <h1>My Old Man Said...</h1>
 
-        <TeamContainer teams={this.state.teams}/>
+        {/* <TeamDetails team={this.state.teamDetails}/> */}
+
+        <TeamContainer teams={this.state.teams} handleClick={this.handleClick}/>
 
       </main>
     );
