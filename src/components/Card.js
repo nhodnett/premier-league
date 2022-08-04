@@ -1,13 +1,13 @@
 import React from 'react';
 import '../styles/Card.css';
 
-const Card = ({ strTeamBadge }) => {
+const Card = ({ strTeamBadge, idTeam, handleClick }) => {
 
     return (
         <div className='card'>
             <img 
-                src={strTeamBadge}
-                alt='teamBadge'
+                src={strTeamBadge} alt='teamBadge'
+                onClick={() => handleClick(idTeam)}
             />
         </div>
     )

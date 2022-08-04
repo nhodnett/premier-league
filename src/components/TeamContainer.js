@@ -2,14 +2,15 @@ import React from 'react';
 import Card from './Card';
 import '../styles/TeamContainer.css';
 
-const TeamContainer = ({ teams }) => {
+const TeamContainer = ({ teams, handleClick }) => {
 
     const teamCards = teams.map(team => {
         return (
             <Card 
                 strTeamBadge={team.strTeamBadge}
-                id={team.idTeam}
+                idTeam={team.idTeam}
                 key={team.idTeam}
+                handleClick={handleClick}
             />
         )
     })
