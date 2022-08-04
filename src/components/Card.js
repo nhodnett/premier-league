@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../styles/Card.css';
 import emptyStar from '../assets/empty-star.png';
 import filledStar from '../assets/filled-star.png';
@@ -28,10 +29,12 @@ const Card = ({ strTeamBadge, idTeam, handleClick, addFavorite, removeFavorite, 
                     {isFavorited ? <img src={filledStar} className='favorited-star' alt='filled star'></img> : <img src={emptyStar} className='star' alt='empty-star'></img>}
                 </button>
             </div>
+            <Link to='/teamdetails'>
             <img 
                 src={strTeamBadge} alt='teamBadge'
-                onClick={() => handleClick(idTeam)}
-            />
+                // onClick={() => handleClick(idTeam)}
+                />
+            </Link>
         </div>
     )
 }

@@ -3,6 +3,7 @@ import Navbar from './components/Navbar';
 import TeamContainer from './components/TeamContainer';
 import TeamDetails from './components/TeamDetails';
 import Favorites from './components/Favorites';
+import { Route } from 'react-router-dom';
 import './App.css';
 
 class App extends Component {
@@ -26,17 +27,17 @@ class App extends Component {
     })
   }
 
-  handleClick = (id) => {
-    // console.log('28', id)
-    let selected = this.state.teams.find(team => {
-      return team.idTeam === id
-    })
-    // console.log('32', selected)
-    this.setState({ 
-      teamSelected: true,
-      teamDetails: selected
-    })
-  }
+  // handleClick = (id) => {
+  //   // console.log('28', id)
+  //   let selected = this.state.teams.find(team => {
+  //     return team.idTeam === id
+  //   })
+  //   // console.log('32', selected)
+  //   this.setState({ 
+  //     teamSelected: true,
+  //     teamDetails: selected
+  //   })
+  // }
 
   addFavorite = (favoritedTeam) => {
     this.setState({ favorites: [...this.state.favorites, favoritedTeam] })
@@ -52,22 +53,31 @@ class App extends Component {
     return (
       <main className="App">
         <Navbar />
-        {this.state.teamSelected ?
-        <TeamDetails details={this.state.teamDetails}/>
-        //pass information into team details
-          :
-        <TeamContainer 
-          teams={this.state.teams} 
-          addFavorite={this.addFavorite}
-          removeFavorite={this.removeFavorite}
-          favorites={this.state.favorites}
-          handleClick={this.handleClick}/>
-        }
-        <Favorites
+        <Route path='/'>
+
+          <TeamContainer 
+            teams={this.state.teams} 
+            addFavorite={this.addFavorite}
+            removeFavorite={this.removeFavorite}
+            favorites={this.state.favorites}
+            handleClick={this.handleClick}
+          />
+        </Route>
+
+        <Route exact path='/teamdetails'
+
+          render={({ match }) => {
+            <TeamDetails id={match.params.id} />
+          }}>
+          </Route>
+
+        <Route exact path='/favorites'>
+          <Favorites
             favorites={this.state.favorites}
             removeFavorite={this.removeFavorite}
             teams={this.state.teams}
           />
+        </Route>
       </main>
     )
   }
