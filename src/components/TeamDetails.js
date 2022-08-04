@@ -39,7 +39,6 @@ const TeamDetails = (props) => {
             <div className='background-image'>
                 <img src={strStadiumThumb}></img>
             </div>
-
         </div>
     )
 }
