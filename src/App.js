@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
+import Navbar from './components/Navbar';
 import TeamContainer from './components/TeamContainer';
-// import TeamDetails from './components/TeamDetails';
+import TeamDetails from './components/TeamDetails';
 import './App.css';
 
 class App extends Component {
@@ -8,6 +9,7 @@ class App extends Component {
     super()
     this.state = {
       teams: [],
+      teamSelected: false,
       teamDetails: {}
     }
   }
@@ -22,23 +24,33 @@ class App extends Component {
     })
   }
 
-  // handleClick = (id) => {
-  //   console.log(id)
-  //   this.setState({ teamDetails: team.team })
-  // }
+  handleClick = (id) => {
+    console.log('28', id)
+    let selected = this.state.teams.find(team => {
+      return team.idTeam === id
+    })
+    console.log('32', selected)
+    // .find(), takes in an id. FInds the team by id
+    //object - create property
+    this.setState({ 
+      teamSelected: true,
+      teamDetails: selected
+    })
+  }
   
   render() {
-    console.log(this.state.teamDetails)
+    // console.log(this.state.teams)
     return (
       <main className="App">
-        <h1>My Old Man Said...</h1>
-
-        {/* <TeamDetails team={this.state.teamDetails}/> */}
-
+        <Navbar />
+        {this.state.teamSelected ?
+        <TeamDetails details={this.state.teamDetails}/>
+        //pass information into team details
+          :
         <TeamContainer teams={this.state.teams} handleClick={this.handleClick}/>
-
+        }
       </main>
-    );
+    )
   }
 }
 
