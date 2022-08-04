@@ -56,8 +56,18 @@ class App extends Component {
         <TeamDetails details={this.state.teamDetails}/>
         //pass information into team details
           :
-        <TeamContainer teams={this.state.teams} handleClick={this.handleClick}/>
+        <TeamContainer 
+          teams={this.state.teams} 
+          addFavorite={this.addFavorite}
+          removeFavorite={this.removeFavorite}
+          favorites={this.state.favorites}
+          handleClick={this.handleClick}/>
         }
+        <Favorites
+            favorites={this.state.favorites}
+            removeFavorite={this.removeFavorite}
+            teams={this.state.teams}
+          />
       </main>
     )
   }

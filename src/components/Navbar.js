@@ -6,6 +6,7 @@ const Navbar = () => {
     return (
     <div className='nav-bar'>
         <h1>My Old Man Said...</h1>
+        <button onClick={() => )}>Favorites</button>
     </div>
 
     )
