@@ -19,19 +19,17 @@ class App extends Component {
     fetch(`https://www.thesportsdb.com/api/v1/json/2/search_all_teams.php?l=English%20Premier%20League`)
     .then(response => response.json())
     .then(data => {
-        console.log(this.state.teams)
+        // console.log(this.state.teams)
       this.setState({ teams: data.teams })
     })
   }
 
   handleClick = (id) => {
-    console.log('28', id)
+    // console.log('28', id)
     let selected = this.state.teams.find(team => {
       return team.idTeam === id
     })
-    console.log('32', selected)
-    // .find(), takes in an id. FInds the team by id
-    //object - create property
+    // console.log('32', selected)
     this.setState({ 
       teamSelected: true,
       teamDetails: selected
