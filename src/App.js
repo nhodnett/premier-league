@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Navbar from './components/Navbar';
 import TeamContainer from './components/TeamContainer';
 import TeamDetails from './components/TeamDetails';
+import Favorites from './components/Favorites';
 import './App.css';
 
 class App extends Component {
@@ -10,7 +11,8 @@ class App extends Component {
     this.state = {
       teams: [],
       teamSelected: false,
-      teamDetails: {}
+      teamDetails: {},
+      favorites: []
     }
   }
 
@@ -34,6 +36,15 @@ class App extends Component {
       teamSelected: true,
       teamDetails: selected
     })
+  }
+
+  addFavorite = (favoritedTeam) => {
+    this.setState({ favorites: [...this.state.favorites, favoritedTeam] })
+  }
+
+  removeFavorite = (favoritedTeam) => {
+    let filteredFavorites = this.state.favorites.filter(favoriteTeam => favoritedTeam.idTeam !== favoriteTeam.id)
+    this.setState({favorites: filteredFavorites})
   }
   
   render() {
