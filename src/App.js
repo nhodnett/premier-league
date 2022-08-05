@@ -11,8 +11,8 @@ class App extends Component {
     super()
     this.state = {
       teams: [],
-      teamSelected: false,
-      teamDetails: {},
+      // teamSelected: false,
+      // teamDetails: {},
       favorites: []
     }
   }
@@ -40,7 +40,15 @@ class App extends Component {
   // }
 
   addFavorite = (favoritedTeam) => {
-    this.setState({ favorites: [...this.state.favorites, favoritedTeam] })
+    let foundIndex = 0
+    this.state.teams.forEach((team, index) => {
+    if (team.idTeam === favoritedTeam.idTeam) {
+      foundIndex = index
+    }
+  })
+    let teams = this.state.teams
+    teams[foundIndex].isFavorited = true
+    this.setState({ favorites: [...this.state.favorites, favoritedTeam], teams: teams })
   }
 
   removeFavorite = (favoritedTeam) => {
@@ -49,11 +57,11 @@ class App extends Component {
   }
   
   render() {
-    // console.log(this.state.teams)
+     console.log(this.state.favorites)
     return (
       <main className="App">
         <Navbar />
-        <Route path='/'>
+        <Route exact path='/'>
 
           <TeamContainer 
             teams={this.state.teams} 
@@ -64,10 +72,13 @@ class App extends Component {
           />
         </Route>
 
-        <Route exact path='/teamdetails'
+        <Route exact path='/:idTeam'
 
           render={({ match }) => {
-            <TeamDetails id={match.params.id} />
+            return <TeamDetails 
+                      id={match.params.idTeam} 
+                      teams={this.state.teams}
+                      />
           }}>
           </Route>
 

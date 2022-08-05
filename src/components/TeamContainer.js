@@ -1,21 +1,21 @@
 import React from 'react';
 import Card from './Card';
 import '../styles/TeamContainer.css';
-import Favorites from './Favorites';
+// import Favorites from './Favorites';
 
 const TeamContainer = ({ teams, addFavorite, removeFavorite, favorites, isFavorited, handleClick }) => {
-
+    console.log('7', teams)
     const teamCards = teams.map(team => {
-        let isFavorited = false
-        if (favorites) {
-        favorites.forEach((favoriteTeam) => {
-            if(team.idTeam === favoriteTeam.id) {
-                isFavorited = true
-            } else if (!team.idTeam === favoriteTeam.id) {
-                isFavorited = false
-            }
-        })
-        }   
+ 
+        // if (favorites) {
+        // favorites.forEach((favoriteTeam) => {
+        //     if(team.idTeam === favoriteTeam.id) {
+        //         isFavorited = true
+        //     } else if (!team.idTeam === favoriteTeam.id) {
+        //         isFavorited = false
+        //     }
+        // })
+        // }   
 
         return (
             <Card 
@@ -25,7 +25,7 @@ const TeamContainer = ({ teams, addFavorite, removeFavorite, favorites, isFavori
                 handleClick={handleClick}
                 addFavorite={addFavorite}
                 removeFavorite={removeFavorite}
-                isFavorited={isFavorited}
+                isFavorited={team.isFavorited}
             />
         )
     })
