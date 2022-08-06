@@ -1,6 +1,7 @@
 import React from 'react';
 import filledStar from '../assets/filled-star.png';
 import '../styles/FavoriteCard.css';
+import PropTypes from 'prop-types';
 
 const FavoriteCard = ({ strTeamBadge, idTeam, removeFavorite }) => {
 
@@ -18,3 +19,10 @@ const FavoriteCard = ({ strTeamBadge, idTeam, removeFavorite }) => {
 }
 
 export default FavoriteCard;
+
+FavoriteCard.propTypes = {
+    strTeamBadge: PropTypes.string,
+    idTeam: PropTypes.string,
+    removeFavorite: PropTypes.func
+}
+
