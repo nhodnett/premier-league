@@ -1,7 +1,23 @@
-.card {
+/* .card {
     box-sizing: border-box;
     border: 1px solid black;
     padding: 10px;
+} */
+
+.card {
+  align-items: center;
+  background-color: #ebebeb;
+  border: 1px solid black;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  height: 350px;
+  margin: 10px;
+  padding: 10px;
+  text-align: center;
+  width: 275px;
+  box-shadow: inset  2px 2px 3px 2px #ffffff,
+  2px 2px 4px 2px #1d1d1d;
 }
 
 .card:hover {
@@ -11,10 +27,15 @@
     opacity: .8;
 }
 
+.card-image {
+  height: 275px;
+  width: 275px;
+}
+
 .star,
 .favorited-star {
-  height: 30px;
-  width: 30px;
+  height: 50px;
+  width: 50px;
 }
 
 .star-button {

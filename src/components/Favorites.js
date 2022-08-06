@@ -29,4 +29,4 @@ Favorites.propTypes = {
     favorites: PropTypes.array,
     removeFavorite: PropTypes.func,
     isFavorited:PropTypes.bool
-  };
+};

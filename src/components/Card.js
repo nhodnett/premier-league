@@ -26,7 +26,6 @@ const Card = ({ strTeamBadge, idTeam, handleClick, addFavorite, removeFavorite, 
     return (
         <div className='card'>
             <div className='favorite-container'>
-
                 <button className='star-button' onClick={() => addToFavorites(idTeam)}>
                     {isFavorited ? <img src={filledStar} className='favorited-star' alt='filled star'></img> : <img src={emptyStar} className='star' alt='empty-star'></img>}
                 </button>

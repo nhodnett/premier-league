@@ -13,7 +13,7 @@ const FavoriteCard = ({ strTeamBadge, idTeam, removeFavorite }) => {
                     <img src={filledStar} className='favorited-star' alt='filled star'></img> 
                 </button>
             </div>
-            <img src={strTeamBadge} alt='teamBadge'/>
+            <img className='card-image' src={strTeamBadge} alt='teamBadge'/>
         </div>
     )
 }

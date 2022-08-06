@@ -36,4 +36,4 @@ TeamContainer.propTypes = {
     favorites: PropTypes.array,
     isFavorited:PropTypes.bool,
     handleClick: PropTypes.func
-  };
+};
