@@ -31,7 +31,7 @@ const Card = ({ strTeamBadge, idTeam, handleClick, addFavorite, removeFavorite, 
                 </button>
             </div>
             <Link to={`/${idTeam}`}>
-                <img src={strTeamBadge} alt='teamBadge'/>
+                <img className='card-image' src={strTeamBadge} alt='teamBadge'/>
             </Link>
         </div>
     )
