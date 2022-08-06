@@ -8,26 +8,23 @@ const TeamDetails = (props) => {
     
     return (
         <div className='team-details'>
-            {/* <Link to='/teamdetails'> */}
-                <h2>{selected.strTeam}</h2> 
-                <p>{selected.intFormedYear}</p>
-                <p>{selected.strStadium}</p>
-                <article className='stadium-details'>
-                    <p>{selected.strStadiumLocation}</p>
-                    <p>{selected.strStadiumCapacity}</p>
-                    <p>{selected.strStadiumDescription}</p>
-                </article>
-                <article className='social-media'>
-                    <p>{selected.strWebsite}</p>
-                    <p>{selected.strTwitter}</p>
-                    <p>{selected.strInstagram}</p>
-                </article>
-                <p>{selected.strDescriptionEN}</p>
-                <div className='background-image'>
-                    <img src={selected.strStadiumThumb}></img>
-                </div>
-            {/* </Link> */}
-
+            <h2>{selected.strTeam}</h2> 
+            <p>{selected.intFormedYear}</p>
+            <p>{selected.strStadium}</p>
+            <article className='stadium-details'>
+                <p>{selected.strStadiumLocation}</p>
+                <p>{selected.strStadiumCapacity}</p>
+                <p>{selected.strStadiumDescription}</p>
+            </article>
+            <article className='social-media'>
+                <p>{selected.strWebsite}</p>
+                <p>{selected.strTwitter}</p>
+                <p>{selected.strInstagram}</p>
+            </article>
+            <p>{selected.strDescriptionEN}</p>
+            <div className='background-image'>
+                <img src={selected.strStadiumThumb}></img>
+            </div>
         </div>
     )
 }

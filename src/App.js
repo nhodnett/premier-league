@@ -11,8 +11,6 @@ class App extends Component {
     super()
     this.state = {
       teams: [],
-      // teamSelected: false,
-      // teamDetails: {},
       favorites: []
     }
   }
@@ -22,22 +20,9 @@ class App extends Component {
     fetch(`https://www.thesportsdb.com/api/v1/json/2/search_all_teams.php?l=English%20Premier%20League`)
     .then(response => response.json())
     .then(data => {
-        // console.log(this.state.teams)
       this.setState({ teams: data.teams })
     })
   }
-
-  // handleClick = (id) => {
-  //   // console.log('28', id)
-  //   let selected = this.state.teams.find(team => {
-  //     return team.idTeam === id
-  //   })
-  //   // console.log('32', selected)
-  //   this.setState({ 
-  //     teamSelected: true,
-  //     teamDetails: selected
-  //   })
-  // }
 
   addFavorite = (favoritedTeam) => {
     let foundIndex = 0
@@ -58,7 +43,6 @@ class App extends Component {
       foundIndex = index
     }
   })
-    // console.log(favoritedTeamId)
     let teams = this.state.teams
     teams[foundIndex].isFavorited = false
 
@@ -72,20 +56,19 @@ class App extends Component {
       console.log(this.state.favorites)
     return (
       <main className="App">
+        
         <Navbar />
-        <Route exact path='/'>
 
+        <Route exact path='/'>
           <TeamContainer 
             teams={this.state.teams} 
             addFavorite={this.addFavorite}
             removeFavorite={this.removeFavorite}
             favorites={this.state.favorites}
-            // handleClick={this.handleClick}
           />
         </Route>
 
         <Route exact path='/:idTeam'
-
           render={({ match }) => {
             return <TeamDetails 
                       id={match.params.idTeam} 
@@ -101,6 +84,7 @@ class App extends Component {
             teams={this.state.teams}
           />
         </Route>
+
       </main>
     )
   }
