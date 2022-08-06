@@ -55,6 +55,26 @@ describe('premier-league', () => {
     cy.get('.favorite-container').find('.card').should('have.length', 0)
   })
 
-  //it(should display an error message when a fetch call to the api fails)
+  // it('should return an error message if a network request fails', () => {
+  //   cy.visit('http://localhost:3000/')
+  //   cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies', {
+  //       statusCode: 404,
+  //       body: {
+  //         error: 'Cannot GET /api/v2/movies'344
+  //       }
+  //     })
+  //     .get('.error').should('have.text', 'Not Found')
+  // })
+
+  // it('should return an error message if there is an internal server error', () => {
+  //   cy.visit('http://localhost:3000/')
+  //   cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies', {
+  //       statusCode: 500,
+  //       body: {
+  //         error: 'Cypress forced 500'
+  //       }
+  //     })
+  //     .get('.error').should('have.text', 'Internal Server Error')
+  // })
 
 })

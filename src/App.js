@@ -3,7 +3,8 @@ import Navbar from './components/Navbar';
 import TeamContainer from './components/TeamContainer';
 import TeamDetails from './components/TeamDetails';
 import Favorites from './components/Favorites';
-import { Route } from 'react-router-dom';
+import Error from './components/Error';
+import { Route, useHistory } from 'react-router-dom';
 import './App.css';
 
 class App extends Component {
@@ -11,7 +12,8 @@ class App extends Component {
     super()
     this.state = {
       teams: [],
-      favorites: []
+      favorites: [], 
+      error: false
     }
   }
 
@@ -20,9 +22,33 @@ class App extends Component {
     fetch(`https://www.thesportsdb.com/api/v1/json/2/search_all_teams.php?l=English%20Premier%20League`)
     .then(response => response.json())
     .then(data => {
-      this.setState({ teams: data.teams })
+      this.checkResponse(data)
+    })
+    .catch(() => {
+      console.log('error')
+      this.setState({ error: true })
+      // this.handleError()
     })
   }
+  
+  checkResponse = (data) => {
+      // console.log(data.teams)
+    if (!data.teams || !data.teams.length) {
+      console.log('if')
+      this.setState({ error: true })
+      // this.handleError()
+    } else {
+      console.log('else')
+      this.setState({ teams: data.teams })
+    } 
+  }
+  
+  // handleError = () => {
+  //   let history = useHistory();
+  //   if (this.state.error) {
+  //     history.push('/error')
+  //   }
+  // }
 
   addFavorite = (favoritedTeam) => {
     let foundIndex = 0
@@ -53,20 +79,26 @@ class App extends Component {
   }
   
   render() {
-      console.log(this.state.favorites)
+      console.log(this.state.error)
     return (
+
       <main className="App">
         
         <Navbar />
 
-        <Route exact path='/'>
+
+        {/* <Route exact path='/error'> */}
+        { this.state.error && <Error /> } 
+        {/* </Route> */}
+
+        <Route exact path='/'>        
           <TeamContainer 
-            teams={this.state.teams} 
-            addFavorite={this.addFavorite}
-            removeFavorite={this.removeFavorite}
-            favorites={this.state.favorites}
+          teams={this.state.teams} 
+          addFavorite={this.addFavorite}
+          removeFavorite={this.removeFavorite}
+          favorites={this.state.favorites}
           />
-        </Route>
+        </Route> 
 
         <Route exact path='/:idTeam'
           render={({ match }) => {
