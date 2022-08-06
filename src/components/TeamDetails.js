@@ -19,7 +19,7 @@ const TeamDetails = (props) => {
         strDescriptionEN, 
         strTeamFanart1
     } = props
-    console.log('6', props)
+     console.log('22', props)
 
     let selected = props.teams.find(team => team.idTeam === props.id) 
     

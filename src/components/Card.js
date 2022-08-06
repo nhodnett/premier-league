@@ -5,15 +5,15 @@ import emptyStar from '../assets/empty-star.png';
 import filledStar from '../assets/filled-star.png';
 
 const Card = ({ strTeamBadge, idTeam, handleClick, addFavorite, removeFavorite, isFavorited }) => {
-    console.log('8', isFavorited)
-    const addToFavorites = () => {
-        if(!isFavorited) {
+    // console.log('8', isFavorited)
+    const addToFavorites = (idTeam) => {
+        if (!isFavorited) {
             isFavorited = true
             const favoritedTeam = {
                 strTeamBadge: strTeamBadge,
                 idTeam: idTeam,
                 handleClick: handleClick,
-                isFavorited: true
+                isFavorited: isFavorited
             }
         addFavorite(favoritedTeam)
     } else {
@@ -25,7 +25,8 @@ const Card = ({ strTeamBadge, idTeam, handleClick, addFavorite, removeFavorite, 
     return (
         <div className='card'>
             <div className='favorite-container'>
-                <button className='star-button' onClick={() => addToFavorites()}>
+                
+                <button className='star-button' onClick={() => addToFavorites(idTeam)}>
                     {isFavorited ? <img src={filledStar} className='favorited-star' alt='filled star'></img> : <img src={emptyStar} className='star' alt='empty-star'></img>}
                 </button>
             </div>

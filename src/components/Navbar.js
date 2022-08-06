@@ -9,7 +9,7 @@ const Navbar = () => {
         <Link to='/' className='nav-link'>
         <h1>My Old Man Said...</h1>
         </Link>
-        <Link to='/favorites' className='nav-link'>
+        <Link to='/teams/favorites' className='nav-link'>
             <button className='favorites-button'>Favorites</button>
         </Link>       
     </div>

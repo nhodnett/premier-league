@@ -50,14 +50,26 @@ class App extends Component {
     teams[foundIndex].isFavorited = true
     this.setState({ favorites: [...this.state.favorites, favoritedTeam], teams: teams })
   }
+  
+  removeFavorite = (favoritedTeamId) => {
+    let foundIndex = 0
+    this.state.teams.forEach((team, index) => {
+    if (team.idTeam === favoritedTeamId) {
+      foundIndex = index
+    }
+  })
+    // console.log(favoritedTeamId)
+    let teams = this.state.teams
+    teams[foundIndex].isFavorited = false
 
-  removeFavorite = (favoritedTeam) => {
-    let filteredFavorites = this.state.favorites.filter(favoriteTeam => favoritedTeam.idTeam !== favoriteTeam.id)
-    this.setState({favorites: filteredFavorites})
+    let filteredFavorites = this.state.favorites.filter(
+      (favoriteTeam) => favoritedTeamId !== favoriteTeam.idTeam)
+    
+      this.setState({ favorites: filteredFavorites, teams: teams })
   }
   
   render() {
-     console.log(this.state.favorites)
+      console.log(this.state.favorites)
     return (
       <main className="App">
         <Navbar />
@@ -68,7 +80,7 @@ class App extends Component {
             addFavorite={this.addFavorite}
             removeFavorite={this.removeFavorite}
             favorites={this.state.favorites}
-            handleClick={this.handleClick}
+            // handleClick={this.handleClick}
           />
         </Route>
 
@@ -82,7 +94,7 @@ class App extends Component {
           }}>
           </Route>
 
-        <Route exact path='/favorites'>
+        <Route exact path='/teams/favorites'>
           <Favorites
             favorites={this.state.favorites}
             removeFavorite={this.removeFavorite}

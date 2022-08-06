@@ -4,7 +4,7 @@ import '../styles/TeamContainer.css';
 // import Favorites from './Favorites';
 
 const TeamContainer = ({ teams, addFavorite, removeFavorite, favorites, isFavorited, handleClick }) => {
-    console.log('7', teams)
+    // console.log('7', teams)
     const teamCards = teams.map(team => {
  
         // if (favorites) {

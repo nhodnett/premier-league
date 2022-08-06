@@ -2,7 +2,7 @@ import React from 'react';
 import FavoriteCard from './FavoriteCard';
 import '../styles/Favorites.css';
 
-const Favorites = ({ favorites }) => {
+const Favorites = ({ favorites, removeFavorite, isFavorited }) => {
 
     const favoriteCards = favorites.map(favoriteTeam => {
         return (
@@ -10,6 +10,8 @@ const Favorites = ({ favorites }) => {
                 strTeamBadge={favoriteTeam.strTeamBadge}
                 idTeam={favoriteTeam.idTeam}
                 key={favoriteTeam.idTeam}
+                removeFavorite={removeFavorite}
+                isFavorited={isFavorited}
             />
         )
     })
