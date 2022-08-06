@@ -3,24 +3,7 @@ import React from 'react';
 import '../styles/TeamDetails.css'
 
 const TeamDetails = (props) => {
-    const { idTeam, 
-        strTeam, 
-        strAlternate, 
-        intFormedYear, 
-        strStadium, 
-        strKeywords, 
-        strStadiumThumb, 
-        strStadiumDescription, 
-        strStadiumLocation, 
-        strStadiumCapacity, 
-        strWebsite, 
-        strTwitter, 
-        strInstagram, 
-        strDescriptionEN, 
-        strTeamFanart1
-    } = props
-     console.log('22', props)
-
+   
     let selected = props.teams.find(team => team.idTeam === props.id) 
     
     return (
