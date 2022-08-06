@@ -33,4 +33,4 @@ export default TeamDetails;
 
 TeamDetails.propTypes = {
     teams: PropTypes.array,
-  };
+};

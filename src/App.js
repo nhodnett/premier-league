@@ -4,7 +4,7 @@ import TeamContainer from './components/TeamContainer';
 import TeamDetails from './components/TeamDetails';
 import Favorites from './components/Favorites';
 import Error from './components/Error';
-import { Route, useHistory } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import './App.css';
 
 class App extends Component {
