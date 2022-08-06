@@ -1,8 +1,9 @@
 import React from 'react';
 import Card from './Card';
 import '../styles/TeamContainer.css';
+import PropTypes from 'prop-types';
 
-const TeamContainer = ({ teams, addFavorite, removeFavorite, favorites, isFavorited, handleClick }) => {
+const TeamContainer = ({ teams, addFavorite, removeFavorite, handleClick }) => {
     // console.log('7', teams)
     const teamCards = teams.map(team => {
   
@@ -27,3 +28,12 @@ const TeamContainer = ({ teams, addFavorite, removeFavorite, favorites, isFavori
 }
 
 export default TeamContainer;
+
+TeamContainer.propTypes = {
+    teams: PropTypes.array,
+    addFavorite: PropTypes.func,
+    removeFavorite: PropTypes.func,
+    favorites: PropTypes.array,
+    isFavorited:PropTypes.bool,
+    handleClick: PropTypes.func
+  };

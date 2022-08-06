@@ -1,6 +1,6 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
 import '../styles/TeamDetails.css'
+import PropTypes from 'prop-types';
 
 const TeamDetails = (props) => {
    
@@ -30,3 +30,7 @@ const TeamDetails = (props) => {
 }
 
 export default TeamDetails;
+
+TeamDetails.propTypes = {
+    teams: PropTypes.array,
+  };

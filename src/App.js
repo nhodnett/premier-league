@@ -27,28 +27,18 @@ class App extends Component {
     .catch(() => {
       console.log('error')
       this.setState({ error: true })
-      // this.handleError()
     })
   }
   
   checkResponse = (data) => {
-      // console.log(data.teams)
     if (!data.teams || !data.teams.length) {
       console.log('if')
       this.setState({ error: true })
-      // this.handleError()
     } else {
       console.log('else')
       this.setState({ teams: data.teams })
     } 
   }
-  
-  // handleError = () => {
-  //   let history = useHistory();
-  //   if (this.state.error) {
-  //     history.push('/error')
-  //   }
-  // }
 
   addFavorite = (favoritedTeam) => {
     let foundIndex = 0
@@ -86,10 +76,7 @@ class App extends Component {
         
         <Navbar />
 
-
-        {/* <Route exact path='/error'> */}
         { this.state.error && <Error /> } 
-        {/* </Route> */}
 
         <Route exact path='/'>        
           <TeamContainer 

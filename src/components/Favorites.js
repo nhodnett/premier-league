@@ -1,6 +1,7 @@
 import React from 'react';
 import FavoriteCard from './FavoriteCard';
 import '../styles/Favorites.css';
+import PropTypes from 'prop-types';
 
 const Favorites = ({ favorites, removeFavorite, isFavorited }) => {
 
@@ -23,3 +24,9 @@ const Favorites = ({ favorites, removeFavorite, isFavorited }) => {
 }
 
 export default Favorites;
+
+Favorites.propTypes = {
+    favorites: PropTypes.array,
+    removeFavorite: PropTypes.func,
+    isFavorited:PropTypes.bool
+  };
