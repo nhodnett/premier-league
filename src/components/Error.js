@@ -6,7 +6,7 @@ const Error = () => {
     return (
         <div className='error'>
             <Link to='/'>
-                <h2 className='error-message'>Error loading page, please refresh and try again...</h2>
+                <h2 className='error-message'>Error loading page. Please click this link, or refresh to try again...</h2>
             </Link>
         </div>
     )

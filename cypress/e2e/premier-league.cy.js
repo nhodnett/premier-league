@@ -55,20 +55,20 @@ describe('premier-league', () => {
     cy.get('.favorite-container').find('.card').should('have.length', 0)
   })
 
-  // it('should return an error message if a network request fails', () => {
-  //   cy.visit('http://localhost:3000/')
-  //   cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies', {
-  //       statusCode: 404,
-  //       body: {
-  //         error: 'Cannot GET /api/v2/movies'344
-  //       }
-  //     })
-  //     .get('.error').should('have.text', 'Not Found')
-  // })
+  it('should return an error message if a network request fails', () => {
+    // cy.visit('http://localhost:3000/')
+    cy.intercept('GET', 'https://www.thesportsdb.com/api/v1/json/2/search_all_teams.php?l=English%20Premier%20League', {
+        statusCode: 404,
+        body: {
+          error: true
+        }
+      })
+      .get('.error').should('have.text', 'Error loading page. Please click this link, or refresh to try again...')
+  })
 
   // it('should return an error message if there is an internal server error', () => {
   //   cy.visit('http://localhost:3000/')
-  //   cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies', {
+  //   cy.intercept('GET', 'https://www.thesportsdb.com/api/v1/json/2/search_all_teams.php?l=English%20Premier%20League', {
   //       statusCode: 500,
   //       body: {
   //         error: 'Cypress forced 500'
