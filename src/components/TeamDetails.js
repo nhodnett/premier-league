@@ -24,14 +24,17 @@ const TeamDetails = (props) => {
                 <article className='stadium-details'>
                     <p className='stadium-name'>{selected.strStadium}</p>
                     <p className='stadium-location'>{selected.strStadiumLocation}</p>
-                    <p className='stadium-capacity'>{selected.strStadiumCapacity}</p>
-                    <p className='stadium -description'>{selected.strStadiumDescription}</p>
+                </article>
+                <article className='history'>
+                    <p className='team-history'>{selected.strDescriptionEN}</p>
                 </article>
                 </section>
                 <div className='background-image'>
                     <img src={selected.strStadiumThumb}></img>
                 </div>
-                    <p className='team-history'>{selected.strDescriptionEN}</p>
+                <article className='stadium-description'>
+                    <p>{selected.strStadiumDescription}</p>
+                </article>
         </div>
         </>
     )

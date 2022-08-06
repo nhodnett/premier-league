@@ -1,45 +1,72 @@
 .team-details {
     color: white;
+    background-color: #393D47;
 }
 
 .headline-info {
-    align-items: flex-start;
+    align-items: normal;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    padding: 20px;
-    background-color:#393D47;
+    justify-content: space-evenly;
+    /* padding: 20px; */
+    /* background-color:#393D47; */
 }
 
-.stadium-details, .background-image, .team-history  {
-    align-items: flex-start;
+.stadium-details, .background-image, .team-history, .stadium-description  {
+    align-items: center;
     display: flex;
     flex-wrap: wrap;
+    flex-direction: column;
+    align-content: space-around;
     justify-content: center;
     padding: 20px;
     margin: 0px;
-    background-color:#393D47;
+    /* background-color:#393D47; */
 }
 
-/* .background-image {
+@media screen and (max-width: 450px) {
+    .team-details {
     align-items: flex-start;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     padding: 20px;
-    background-color:#393D47;
-} */
-
-@media screen and (max-width: 450px) {
-    .team-details {
-      align-items: flex-start;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      padding: 20px;
     }
-  }
+}
 
-/* .club-info {
-   
-} */
+.social-media::before {
+    content: 'Official Social Media: ';
+    font-weight: bold;
+}
+
+.name::before {
+    content: 'Name: ';
+    font-weight: bold;
+}
+
+.year-formed::before {
+    content: 'Year founded: ';
+    font-weight: bold;
+}
+
+.stadium-name::before {
+    content: 'Stadium: ';
+    font-weight: bold;
+}
+
+.stadium-location::before {
+    content: 'Location: ';
+    font-weight: bold;
+}
+
+.history::before {
+    content: 'Team History: ';
+    font-weight: bold;
+    /* background-color: #393D47; */
+}
+
+.stadium-description::before {
+    content: 'Stadium Information: ';
+    font-weight: bold;
+}
+
