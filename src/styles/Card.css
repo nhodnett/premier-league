@@ -9,4 +9,15 @@
     transform: scale(1.02);
     transition: all .2s;
     opacity: .8;
-  }
+}
+
+.star,
+.favorited-star {
+  height: 30px;
+  width: 30px;
+}
+
+.star-button {
+  background: none;
+  border: none;
+}
