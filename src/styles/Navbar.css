@@ -7,10 +7,7 @@
       flex-direction: row;
       justify-content: space-around;
       align-items: center;
-      background:
-      linear-gradient(0.46deg, #393D47 10.25%, rgba(98, 136, 192, 0.471302) 52.91%,
-     rgba(228, 253, 225, 0) 87.43%),
-     #393D47;
+      background: -webkit-linear-gradient(black, #393D47);
   }
 
 h1 {
@@ -30,10 +27,7 @@ h1:hover {
       flex-direction: column;
       align-items: center;
       padding: 35px;
-        background:
-        linear-gradient(0.46deg, #FFFFFF 10.25%, rgba(98, 136, 192, 0.471302) 52.91%,
-       rgba(228, 253, 225, 0) 87.43%),
-       #393D47;
+      background: -webkit-linear-gradient(black, #393D47);
     }
   }
 
