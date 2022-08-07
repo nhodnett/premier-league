@@ -10,6 +10,12 @@
       background: -webkit-linear-gradient(black, #393D47);
   }
 
+.lion-head {
+  height: 50px;
+  width: 100px;
+  background: -webkit-linear-gradient(black, #393D47);
+}
+
 h1 {
     color: white;
     font-size: 54px;
