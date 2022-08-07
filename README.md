@@ -1,70 +1,76 @@
-# Getting Started with Create React App
+# "My Old Man Said..."  Solo Showcase Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Contents:
+* [Deployed App](#deployed-app)
+* [Github Repo](#github-repo)
+* [Demo](#demo)
+* [Project Spec](#project-spec)
+* [Overview](#overview)
+* [Setup Instructions](#setup-instructions)
+* [Technologies Used](#technologies-used)
+* [Learning Goals and Reflections](#learning-goals-and-reflections)
+* [Future Additions](#future-additions)
+* [Contributors](#contributors)
+* [Project Manager](#project-manager)
 
-## Available Scripts
+## Deployed App:
+[Deployed App]()
 
-In the project directory, you can run:
+## Github Repo:
+[Github Repo](https://github.com/nhodnett/premier-league)
 
-### `npm start`
+## Demo:
+![Demo]()
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Project Spec:
+[Project Spec](https://frontend.turing.edu/projects/module-3/showcase.html)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Overview:
+* The purpose of the **W.O.D. App** is to help a user find a workout they can do that day. The home page displays a random Workout Of the Day, (W.O.D.), that details the workout description, its timecap and any weight the user may need.
+* If the randomly generated workout does not appeal, (its too long, or requires equipment the user doesn't have, or they have done it recently in the past for example), the user can click the 'Workouts' button to see a list of other workouts they can choose form instead.
+* Additionally, the user can 'Favorite' a workout by clicking on the star on that workout card. That workout then goes into a separate list of 'Favorite Workouts'. NOTE: It is still displayed in the list of all workouts, but the star becomes solid black instead of just having an outline.
+* If the user no longer wants that workout in their favorites page, clicking the star will remove it from the favorites page and the star turns from solid black back to just an outline.
 
-### `npm test`
+## Setup Instructions:
+To run the application on a local machine:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* Clone down repository
+* `cd` into repository
+* Run `npm install`
+* Run `npm start`
+* Webpage will open in separate browser
 
-### `npm run build`
+## Technologies Used:
+* Github
+* React
+* HTML5
+* CSS
+* Cypress
+* Router
+* Heroku Deployment
+* Github Pages
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Learning Goals and Project Reflections:
+### Learning Goals
+* Practice using React, Router, Asynchronous Javascript and Cypress end to end testing
+* Create a local server using express
+* Deploy local back-end and React App
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Wins
+* Practiced and further solidified understanding of React, Router, and Cypress
+* Refactored successfully to greatly improve functionality involved in favoriting Cards.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Challenges
+* Class to class interaction provided some difficulties.
 
-### `npm run eject`
+## Future Additions:
+* Search functionality by Title, Weight, and Timecap
+* Ability for the user to add their own Workouts
+* Video to demonstrate certain movements and give hints and tips
+* Styling/Dynamic background that changes when the page changes
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Contributors:
+* [Nathan Hodnett](https://github.com/nhodnett)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Project Manager:
