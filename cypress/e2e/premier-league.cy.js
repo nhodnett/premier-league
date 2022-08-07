@@ -62,7 +62,7 @@ describe('premier-league', () => {
           error: true
         }
       })
-      .get('.error').should('have.text', 'Error loading page. Please click this link, or refresh to try again...')
+      .get('.error').should('have.text', 'OFFSIDE!Sorry, there was an error loading the page. Please click this link, or refresh to try again...')
   })
 
 })
