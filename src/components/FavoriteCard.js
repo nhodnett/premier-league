@@ -5,7 +5,6 @@ import PropTypes from 'prop-types';
 
 const FavoriteCard = ({ strTeamBadge, idTeam, removeFavorite }) => {
 
-    // console.log(idTeam)
     return (
         <div className='card'>
             <div className='favorite-container'>

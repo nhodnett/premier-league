@@ -18,7 +18,6 @@ class App extends Component {
   }
 
   componentDidMount = () => {
-    console.log('Did Mount')
     fetch(`https://www.thesportsdb.com/api/v1/json/2/search_all_teams.php?l=English%20Premier%20League`)
     .then(response => response.json())
     .then(data => {
@@ -32,10 +31,8 @@ class App extends Component {
   
   checkResponse = (data) => {
     if (!data.teams || !data.teams.length) {
-      console.log('if')
       this.setState({ error: true })
     } else {
-      console.log('else')
       this.setState({ teams: data.teams })
     } 
   }
@@ -46,7 +43,7 @@ class App extends Component {
     if (team.idTeam === favoritedTeam.idTeam) {
       foundIndex = index
     }
-  })
+    })
     let teams = this.state.teams
     teams[foundIndex].isFavorited = true
     this.setState({ favorites: [...this.state.favorites, favoritedTeam], teams: teams })
@@ -57,8 +54,7 @@ class App extends Component {
     this.state.teams.forEach((team, index) => {
     if (team.idTeam === favoritedTeamId) {
       foundIndex = index
-    }
-  })
+    }})
     let teams = this.state.teams
     teams[foundIndex].isFavorited = false
 
@@ -69,23 +65,26 @@ class App extends Component {
   }
   
   render() {
-      console.log(this.state.error)
     return (
 
       <main className="App">
         
         <Navbar />
 
-        { this.state.error && <Error /> } 
+        {/* <article>
+          Welcome to "My Old Man Said..." Click on a card below to get more detailed information about that team. If you would like to favorote a team, click the star at the top of the card and that team will be added to your favorites.
+          Choose wisely to avoid a lifetime of misery..!
+        </article> */}
 
+        { this.state.error ? <Error /> 
+        :
         <Route exact path='/'>        
           <TeamContainer 
           teams={this.state.teams} 
           addFavorite={this.addFavorite}
           removeFavorite={this.removeFavorite}
-          favorites={this.state.favorites}
           />
-        </Route> 
+        </Route> }
 
         <Route exact path='/:idTeam'
           render={({ match }) => {
