@@ -14,7 +14,7 @@
 * [Project Manager](#project-manager)
 
 ## Deployed App:
-[Deployed App]()
+[Deployed App](https://ancient-savannah-27275.herokuapp.com/)
 
 ## Github Repo:
 [Github Repo](https://github.com/nhodnett/premier-league)
