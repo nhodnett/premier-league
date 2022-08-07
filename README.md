@@ -20,14 +20,14 @@
 [Github Repo](https://github.com/nhodnett/premier-league)
 
 ## Demo:
-![Demo]()
+![Demo](https://media.giphy.com/media/abQ97G0QjoAA2VlYJ1/giphy.gif)
 
 ## Project Spec:
 [Project Spec](https://frontend.turing.edu/projects/module-3/showcase.html)
 
 ## Overview:
 * The purpose of the App is to give a person new to the English Premier League the opportunity to research all 20 teams to see which one, (or ones) they like the look of.
-* By clicking on the team badge, the user is taken to a detailed information page about that specific team. The information on that page includes the teams history, the year it was founded, stadium capacity, the City it is located, scoial media links, and more... 
+* By clicking on the team badge, the user is taken to a detailed information page about that specific team. The information on that page includes the teams history, the year it was founded, stadium capacity, the City it is located, social media links, and more... 
 * If the user likes the look of a team they can favorite it by clicking on the empty star in the teams card on the main page. The star becomes filled in and the team is added to a seperate favorites file.
 * To access to the favorites file, the user simply clicks the favorites button in the NavBar.
 * Although frowned upon, a user can add more than one team to their favorites file if they are stil unsure which team they wish to be their favorite.
@@ -55,21 +55,21 @@ To run the application on a local machine:
 
 ## Learning Goals and Project Reflections:
 ### Learning Goals
-* Practice using React, Router, Asynchronous Javascript and Cypress end to end testing
-* Deploy React App
+* Practice using React, Router, Asynchronous Javascript and Cypress end to end testing.
+* Implementing Prop Types.
+* Deploy the React App using Heroku.
 
 ### Wins
-* Practiced and further solidified understanding of React, Router, and Cypress
+* Practiced and further solidified understanding of React, Router, and Cypress.
 * Refactored successfully to greatly improve functionality involved in favoriting Cards.
 * Implemented Front End error handling/generation due to API only returning a 200 response. 
 
 ### Challenges
 * Class to class interaction provided some initial difficulties.
-* Router provided some difficulties interms of reading 2 seperate Routes.
+* Router provided some difficulties in terms of reading 2 seperate Routes.
 
 ## Future Additions:
-* Search functionality by Team Name.
-* Filter functionality by, City, Year Founded, Ground Capacity, etc...
+* Filter functionality - City, Year Founded, Ground Capacity, etc...
 * More information on the Favorites page.
 * Link to a Team's star player and a detailed page on that player.
 * Styling/Dynamic background that changes when the page changes.

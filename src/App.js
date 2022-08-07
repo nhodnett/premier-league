@@ -18,7 +18,6 @@ class App extends Component {
   }
 
   componentDidMount = () => {
-    console.log('Did Mount')
     fetch(`https://www.thesportsdb.com/api/v1/json/2/search_all_teams.php?l=English%20Premier%20League`)
     .then(response => response.json())
     .then(data => {
@@ -32,10 +31,8 @@ class App extends Component {
   
   checkResponse = (data) => {
     if (!data.teams || !data.teams.length) {
-      console.log('if')
       this.setState({ error: true })
     } else {
-      console.log('else')
       this.setState({ teams: data.teams })
     } 
   }
