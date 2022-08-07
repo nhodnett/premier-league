@@ -4,7 +4,7 @@ import '../styles/TeamContainer.css';
 import PropTypes from 'prop-types';
 
 const TeamContainer = ({ teams, addFavorite, removeFavorite, handleClick }) => {
-    // console.log('7', teams)
+    
     const teamCards = teams.map(team => {
   
     return (

@@ -26,10 +26,13 @@
 [Project Spec](https://frontend.turing.edu/projects/module-3/showcase.html)
 
 ## Overview:
-* The purpose of the **W.O.D. App** is to help a user find a workout they can do that day. The home page displays a random Workout Of the Day, (W.O.D.), that details the workout description, its timecap and any weight the user may need.
-* If the randomly generated workout does not appeal, (its too long, or requires equipment the user doesn't have, or they have done it recently in the past for example), the user can click the 'Workouts' button to see a list of other workouts they can choose form instead.
-* Additionally, the user can 'Favorite' a workout by clicking on the star on that workout card. That workout then goes into a separate list of 'Favorite Workouts'. NOTE: It is still displayed in the list of all workouts, but the star becomes solid black instead of just having an outline.
-* If the user no longer wants that workout in their favorites page, clicking the star will remove it from the favorites page and the star turns from solid black back to just an outline.
+* The purpose of the App is to give a person new to the English Premier League the opportunity to research all 20 teams to see which one, (or ones) they like the look of.
+* By clicking on the team badge, the user is taken to a detailed information page about that specific team. The information on that page includes the teams history, the year it was founded, stadium capacity, the City it is located, scoial media links, and more... 
+* If the user likes the look of a team they can favorite it by clicking on the empty star in the teams card on the main page. The star becomes filled in and the team is added to a seperate favorites file.
+* To access to the favorites file, the user simply clicks the favorites button in the NavBar.
+* Although frowned upon, a user can add more than one team to their favorites file if they are stil unsure which team they wish to be their favorite.
+* To remove a teams from their favorites, the user simply clicks the filled in star and it turns to empty. That team will not longer appear in the favorites file, and the filled in star will no longer show on the main page either.
+* From either the detailed team view, or the favorites file, a user can return to the main page displaying all 20 teams by clicking on the header. Navigation is also possible using the forward and back arrow buttons in the browser.
 
 ## Setup Instructions:
 To run the application on a local machine:
@@ -38,7 +41,7 @@ To run the application on a local machine:
 * `cd` into repository
 * Run `npm install`
 * Run `npm start`
-* Webpage will open in separate browser
+* Web-page will open in separate browser
 
 ## Technologies Used:
 * Github
@@ -53,24 +56,27 @@ To run the application on a local machine:
 ## Learning Goals and Project Reflections:
 ### Learning Goals
 * Practice using React, Router, Asynchronous Javascript and Cypress end to end testing
-* Create a local server using express
-* Deploy local back-end and React App
+* Deploy React App
 
 ### Wins
 * Practiced and further solidified understanding of React, Router, and Cypress
 * Refactored successfully to greatly improve functionality involved in favoriting Cards.
+* Implemented Front End error handling/generation due to API only returning a 200 response. 
 
 ### Challenges
-* Class to class interaction provided some difficulties.
+* Class to class interaction provided some initial difficulties.
+* Router provided some difficulties interms of reading 2 seperate Routes.
 
 ## Future Additions:
-* Search functionality by Title, Weight, and Timecap
-* Ability for the user to add their own Workouts
-* Video to demonstrate certain movements and give hints and tips
-* Styling/Dynamic background that changes when the page changes
+* Search functionality by Team Name.
+* Filter functionality by, City, Year Founded, Ground Capacity, etc...
+* More information on the Favorites page.
+* Link to a Team's star player and a detailed page on that player.
+* Styling/Dynamic background that changes when the page changes.
 
 ## Contributors:
 * [Nathan Hodnett](https://github.com/nhodnett)
 
 
 ## Project Manager:
+* Scott Ertmer

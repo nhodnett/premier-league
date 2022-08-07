@@ -3,7 +3,7 @@ import '../styles/TeamDetails.css'
 import PropTypes from 'prop-types';
 
 const TeamDetails = (props) => {
-   
+
     let selected = props.teams.find(team => team.idTeam === props.id) 
     
     return (
@@ -20,7 +20,7 @@ const TeamDetails = (props) => {
                     <p className='instagram'>{selected.strInstagram}</p>
                 </article>
             </section>
-                <section className='detailed-info'>
+            <section className='detailed-info'>
                 <article className='stadium-details'>
                     <p className='stadium-name'>{selected.strStadium}</p>
                     <p className='stadium-location'>{selected.strStadiumLocation}</p>
@@ -28,7 +28,7 @@ const TeamDetails = (props) => {
                 <article className='history'>
                     <p className='team-history'>{selected.strDescriptionEN}</p>
                 </article>
-                </section>
+            </section>
                 <div className='background-image'>
                     <img src={selected.strStadiumThumb}></img>
                 </div>

@@ -46,7 +46,7 @@ class App extends Component {
     if (team.idTeam === favoritedTeam.idTeam) {
       foundIndex = index
     }
-  })
+    })
     let teams = this.state.teams
     teams[foundIndex].isFavorited = true
     this.setState({ favorites: [...this.state.favorites, favoritedTeam], teams: teams })
@@ -57,8 +57,7 @@ class App extends Component {
     this.state.teams.forEach((team, index) => {
     if (team.idTeam === favoritedTeamId) {
       foundIndex = index
-    }
-  })
+    }})
     let teams = this.state.teams
     teams[foundIndex].isFavorited = false
 
@@ -69,23 +68,21 @@ class App extends Component {
   }
   
   render() {
-      console.log(this.state.error)
     return (
 
       <main className="App">
         
         <Navbar />
 
-        { this.state.error && <Error /> } 
-
+        { this.state.error ? <Error /> 
+        :
         <Route exact path='/'>        
           <TeamContainer 
           teams={this.state.teams} 
           addFavorite={this.addFavorite}
           removeFavorite={this.removeFavorite}
-          favorites={this.state.favorites}
           />
-        </Route> 
+        </Route> }
 
         <Route exact path='/:idTeam'
           render={({ match }) => {
