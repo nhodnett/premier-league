@@ -8,8 +8,6 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    /* padding: 20px; */
-    /* background-color:#393D47; */
 }
 
 .stadium-details, .background-image, .team-history, .stadium-description  {
@@ -21,7 +19,6 @@
     justify-content: center;
     padding: 20px;
     margin: 0px;
-    /* background-color:#393D47; */
 }
 
 @media screen and (max-width: 450px) {
@@ -62,7 +59,6 @@
 .history::before {
     content: 'Team History: ';
     font-weight: bold;
-    /* background-color: #393D47; */
 }
 
 .stadium-description::before {
