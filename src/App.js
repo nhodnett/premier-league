@@ -74,6 +74,11 @@ class App extends Component {
         
         <Navbar />
 
+        {/* <article>
+          Welcome to "My Old Man Said..." Click on a card below to get more detailed information about that team. If you would like to favorote a team, click the star at the top of the card and that team will be added to your favorites.
+          Choose wisely to avoid a lifetime of misery..!
+        </article> */}
+
         { this.state.error ? <Error /> 
         :
         <Route exact path='/'>        

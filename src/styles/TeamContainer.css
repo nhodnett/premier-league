@@ -4,7 +4,12 @@
     flex-wrap: wrap;
     justify-content: center;
     padding: 20px;
+    color: white;
     background-color:#393D47;
+}
+
+.intro {
+  padding: 20px;
 }
   
 @media screen and (max-width: 450px) {
