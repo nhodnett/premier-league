@@ -6,6 +6,7 @@ import Favorites from './components/Favorites';
 import Error from './components/Error';
 import { Route } from 'react-router-dom';
 import './App.css';
+import { getData } from './apiCalls';
 
 class App extends Component {
   constructor() {
@@ -18,8 +19,7 @@ class App extends Component {
   }
 
   componentDidMount = () => {
-    fetch(`https://www.thesportsdb.com/api/v1/json/2/search_all_teams.php?l=English%20Premier%20League`)
-    .then(response => response.json())
+    getData()
     .then(data => {
       this.checkResponse(data)
     })
@@ -28,6 +28,7 @@ class App extends Component {
       this.setState({ error: true })
     })
   }
+  
   
   checkResponse = (data) => {
     if (!data.teams || !data.teams.length) {
