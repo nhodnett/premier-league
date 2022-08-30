@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useEffect, useState } from 'react';
 import Navbar from './components/Navbar';
 import TeamContainer from './components/TeamContainer';
 import TeamDetails from './components/TeamDetails';
@@ -8,105 +8,91 @@ import { Route } from 'react-router-dom';
 import './App.css';
 import { getData } from './apiCalls';
 
-class App extends Component {
-  constructor() {
-    super()
-    this.state = {
-      teams: [],
-      favorites: [], 
-      error: false
-    }
-  }
+const App = () => {
+  const [teams, setTeams] = useState([])
+  const [favorites, setFavorites] = useState([]) 
+  const [error, setError] = useState(false)
 
-  componentDidMount = () => {
+  useEffect(() => {
     getData()
     .then(data => {
-      this.checkResponse(data)
+      checkResponse(data)
     })
     .catch(() => {
       console.log('error')
-      this.setState({ error: true })
+      setError(true)
     })
-  }
+  }, [])
   
-  
-  checkResponse = (data) => {
+  const checkResponse = (data) => {
     if (!data.teams || !data.teams.length) {
-      this.setState({ error: true })
+      setError(true)
     } else {
-      this.setState({ teams: data.teams })
+      setTeams(data.teams)
     } 
   }
 
-  addFavorite = (favoritedTeam) => {
+  const addFavorite = (favoritedTeam) => {
     let foundIndex = 0
-    this.state.teams.forEach((team, index) => {
-    if (team.idTeam === favoritedTeam.idTeam) {
-      foundIndex = index
-    }
+    teams.forEach((team, index) => {
+      if (team.idTeam === favoritedTeam.idTeam) {
+        foundIndex = index
+      }
     })
-    let teams = this.state.teams
+    let teamUpdate = teams
     teams[foundIndex].isFavorited = true
-    this.setState({ favorites: [...this.state.favorites, favoritedTeam], teams: teams })
+    setFavorites([...favorites, favoritedTeam], teamUpdate)
   }
   
-  removeFavorite = (favoritedTeamId) => {
+  const removeFavorite = (favoritedTeamId) => {
     let foundIndex = 0
-    this.state.teams.forEach((team, index) => {
+      teams.forEach((team, index) => {
     if (team.idTeam === favoritedTeamId) {
       foundIndex = index
     }})
-    let teams = this.state.teams
+    let teamUpdate = teams
     teams[foundIndex].isFavorited = false
 
-    let filteredFavorites = this.state.favorites.filter(
-      (favoriteTeam) => favoritedTeamId !== favoriteTeam.idTeam)
-    
-      this.setState({ favorites: filteredFavorites, teams: teams })
+    let filteredFavorites = favorites.filter(
+      (favoriteTeam) => favoritedTeamId !== favoriteTeam.idTeam)    
+      setFavorites(filteredFavorites, teamUpdate)
   }
   
-  render() {
-    return (
+  return (
 
-      <main className="App">
-        
-        <Navbar />
+    <main className="App">
+      
+      <Navbar />
 
-        {/* <article>
-          Welcome to "My Old Man Said..." Click on a card below to get more detailed information about that team. If you would like to favorote a team, click the star at the top of the card and that team will be added to your favorites.
-          Choose wisely to avoid a lifetime of misery..!
-        </article> */}
+      { error ? <Error /> 
+      :
+      <Route exact path='/'>        
+        <TeamContainer 
+        teams={teams} 
+        addFavorite={addFavorite}
+        removeFavorite={removeFavorite}
+        />
+      </Route> }
 
-        { this.state.error ? <Error /> 
-        :
-        <Route exact path='/'>        
-          <TeamContainer 
-          teams={this.state.teams} 
-          addFavorite={this.addFavorite}
-          removeFavorite={this.removeFavorite}
-          />
-        </Route> }
-
-        <Route exact path='/:idTeam'
-          render={({ match }) => {
-            return <TeamDetails 
-                      id={match.params.idTeam} 
-                      teams={this.state.teams}
-                      />
-          }}>
-          </Route>
-
-        <Route exact path='/teams/favorites'>
-          <Favorites
-            favorites={this.state.favorites}
-            removeFavorite={this.removeFavorite}
-            teams={this.state.teams}
-          />
+      <Route exact path='/:idTeam'
+        render={({ match }) => {
+          return <TeamDetails 
+                    id={match.params.idTeam} 
+                    teams={teams}
+                    />
+        }}>
         </Route>
 
-      </main>
-    )
-  }
+      <Route exact path='/teams/favorites'>
+        <Favorites
+          favorites={favorites}
+          removeFavorite={removeFavorite}
+          teams={teams}
+        />
+      </Route>
+
+    </main>
+  )
 }
 
 export default App;
