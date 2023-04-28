@@ -14,7 +14,7 @@
 * [Project Manager](#project-manager)
 
 ## Deployed App:
-[Deployed App](https://ancient-savannah-27275.herokuapp.com/)
+[Deployed App](https://premier-league-zeta.vercel.app)
 
 ## Github Repo:
 [Github Repo](https://github.com/nhodnett/premier-league)
