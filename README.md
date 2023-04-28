@@ -50,14 +50,14 @@ To run the application on a local machine:
 * CSS
 * Cypress
 * Router
-* Heroku Deployment
+* Vercel Deployment
 * Github Pages
 
 ## Learning Goals and Project Reflections:
 ### Learning Goals
 * Practice using React, Router, Asynchronous Javascript and Cypress end to end testing.
 * Implementing Prop Types.
-* Deploy the React App using Heroku.
+* Deploy the React App using Vercel.
 
 ### Wins
 * Practiced and further solidified understanding of React, Router, and Cypress.
