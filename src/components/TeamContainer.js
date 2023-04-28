@@ -23,7 +23,7 @@ const TeamContainer = ({ teams, addFavorite, removeFavorite, handleClick }) => {
     return (
         <div className='team-container'>
         <article className='intro'>
-          Welcome to "My Old Man Said..." Click on a card below to get more detailed information about that team. If you would like to favorote a team, click the star at the top of the card and that team will be added to your favorites.
+          Welcome to "My Old Man Said..." Click on a card below to get more detailed information about that team. If you would like to favorite a team, click the star at the top of the card and that team will be added to your favorites.
           Choose wisely to avoid a lifetime of misery..!
         </article>
             { teamCards }
