@@ -1,4 +1,4 @@
-# "My Old Man Said..."  Solo Showcase Project
+# "Premier League Pick"  Solo Showcase Project
 
 ## Contents:
 * [Deployed App](#deployed-app)
