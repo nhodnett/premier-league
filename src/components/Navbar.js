@@ -7,7 +7,7 @@ const Navbar = () => {
     return (
         <div className='nav-bar'>
             <NavLink to='/' className='nav-link'>
-                <h1>My Old Man Said...</h1>
+                <h1>Premier League Pick</h1>
             </NavLink>
             <NavLink to='/teams/favorites' className='nav-link'>
                 <button className='favorites-button'>Favorites</button>
